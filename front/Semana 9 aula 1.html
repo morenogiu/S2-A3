@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Portal TechDesign</title>
+    <style>
+        :root {
+            --primary-color: #7415b8;   /* Azul */
+            --secondary-color: #ae43d5; /* Verde */
+            --font-size-base: 16px;
+            --font-size-large: 20px;
+            --spacing-base: 10px;
+        }
+
+        /* Mixins implemented using CSS custom properties and reusable classes since pure CSS doesn't support mixins */
+        /* Box Shadow Mixin */
+        .box-shadow {
+            box-shadow: 0 4px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Transition Mixin */
+        .transition {
+            transition: all 0.3s ease-in-out;
+        }
+
+        /* Responsive Text Sizes for button and card titles */
+        .responsive-text-small {
+            font-size: 14px;
+        }
+        @media (min-width: 768px) {
+            .responsive-text-small {
+                font-size: 18px;
+            }
+            .responsive-text-base {
+                font-size: 20px;
+            }
+        }
+
+        /* Button styles with nesting simulated */
+        .button {
+            background-color: var(--primary-color);
+            color: white;
+            padding: var(--spacing-base);
+            font-size: 14px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: auto;
+            display: inline-block;
+            /* Responsive font size */
+        }
+        @media (min-width: 768px) {
+            .button {
+                font-size: 18px;
+            }
+        }
+        .button:hover {
+            background-color: var(--secondary-color);
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        /* Card styles */
+        .card {
+            background-color: rgb(255, 255, 255);
+            border-radius: 5px;
+            padding: 20px;
+            box-shadow: 0 4px 5px rgba(0, 0, 0, 0.3);
+            max-width: 300px;
+            margin-top: 20px;
+        }
+        .card-title {
+            color: var(--primary-color);
+            font-size: var(--font-size-large);
+            margin-bottom: 10px;
+        }
+        .card-description {
+            font-size: var(--font-size-base);
+            color: #695cb1;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .card {
+                padding: 10px;
+                max-width: 100%;
+            }
+            .button {
+                font-size: 14px;
+                padding: 8px 12px;
+                width: 100%;
+            }
+        }
+
+        /* Overall page style */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Bem-vindo ao Portal TechDesign</h1>
+
+    <button class="button">Comprar Agora</button>
+
+    <div class="card" role="region" aria-label="Produto X">
+        <h2 class="card-title">Produto X</h2>
+        <p class="card-description">Descrição do produto X, que é incrível!</p>
+    </div>
+</body>
+</html>
